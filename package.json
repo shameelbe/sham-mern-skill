@@ -9,11 +9,17 @@
     "mongoose": "^6.3.5"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\"",
     "start": "nodemon server.js"
   },
-  "name": "helloworld",
+  "name": "ShamMernSkill",
   "version": "1.0.0",
-  "description": "Simple backend",
+  "description": "Simple Full Stack",
   "main": "server.js",
   "author": "Shameel",
   "license": "ISC"
