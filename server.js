@@ -4,15 +4,22 @@ const mongoose = require("mongoose");
 const cors = require('cors');
 const students = require("./students.js");
 
+const PORT = process.env.PORT || 4000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://skill:Skill2020!@mern-skill.chomw.mongodb.net/?retryWrites=true&w=majority';
+
 // Connect to MongoDb
-mongoose.connect("mongodb://localhost:27017/skill", { useNewUrlParser: true})
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
     // Once Connected we have to then define our backend server - express create our API
     const app = express();
     app.use(cors());
 
-    app.listen(4000, () => {
-        console.log("server has started");
+    if (process.env.NODE_ENV === 'production') {
+        app.use(express.static('client/build'));
+    }
+    
+    app.listen(PORT, () => {
+        console.log("server has started PORT: " + PORT);
     })
 
     // Get All Students

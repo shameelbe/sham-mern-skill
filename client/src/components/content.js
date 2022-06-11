@@ -10,7 +10,7 @@ const Content = () => {
         // setStudents(list);
     };
 
-    const {data: students, isLoading, erroMessage} = useGetRequest('http://localhost:4000/students');
+    const {data: students, isLoading, erroMessage} = useGetRequest('/students');
 
     return (
         <div>
