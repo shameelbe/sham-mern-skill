@@ -1,0 +1,68 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstName": "Shameel",
+      "lastName": "Abdul",
+      "course": "MERN",
+      "location": "seatlle",
+      "fee" : 1500
+    },
+    {
+      "id": 2,
+      "firstName": "Jack",
+      "lastName": "Sparrow",
+      "course": "Python",
+      "location": "seatlle",
+      "fee" : 1500
+    },
+    {
+      "id": 3,
+      "firstName": "Ricky",
+      "lastName": "Ponting",
+      "course": "MERN",
+      "location": "seatlle",
+      "fee" : 2000
+    },
+    {
+      "firstName": "Harry",
+      "lastName": "Seagle",
+      "course": "Python",
+      "id": 4,
+      "location": "dallas",
+      "fee" : 3000
+    },
+    {
+      "firstName": "Seth",
+      "lastName": "Szymanski",
+      "course": "Python",
+      "id": 5,
+      "location": "boston",
+      "fee" : 5000
+    },
+    {
+      "firstName": "Dave",
+      "lastName": "Rocker",
+      "course": "Python",
+      "id": 6,
+      "location": "dallas",
+      "fee" : 3750
+    },
+    {
+      "firstName": "John",
+      "lastName": "Hastings",
+      "course": "Python",
+      "id": 7,
+      "location": "boston",
+      "fee" : 1500
+    },
+    {
+      "firstName": "Kayla",
+      "lastName": "Mccauson",
+      "course": "Python",
+      "id": 8,
+      "location": "dallas",
+      "fee" : 1600
+    }
+  ]
+}

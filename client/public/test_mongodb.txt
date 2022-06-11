@@ -1,0 +1,60 @@
+
+
+// PROS and Cons
+// Basics Shell commands
+// CRUD
+// Insert, Update, Delete, Select (Querying)  POST, PUT, DELETE and GET
+// Transactions in genreal
+// Querying - Filter based on conditons
+// Logical expressions - or, and, not
+// > < == 
+// Aggregate expressions
+// Data Modelling
+// Basic Validations - custom validations
+
+Revise
+Basic commands
+Comparisons
+
+
+// How to use mongodb - 
+// NodeJs
+// Server in general
+// API - Express js
+// MongoDB connect to backend
+// Connect our Front end to API instead of mock json server
+
+// Heroku
+
+// Work the new website together
+
+// interview prep
+
+// Testing - Unit / E2E
+
+
+// InsertOne and InsertMany
+
+
+db.students.updateOne({
+    id: 1
+}, {
+    $set: {
+        course: "PYTHON"
+    }
+})
+
+
+
+// Student List 
+// FIlters
+// Course, Location, Fee
+
+// MERN and Fee - $3000
+// Students who COurse: MERN "AND" Fee > 3000
+// 
+
+
+db.students.find({$not: {$and: [ {fee: {$gt : 3000}}, {course : "Python"} ]}})
+
+db.students.find({fee: {$gt : 3000}})
