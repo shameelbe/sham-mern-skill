@@ -3,18 +3,21 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const students = require("./students.js");
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/skill";
+const PORT = process.env.PORT || 5000;
+const path = require('path');
 
-// Connect to MongoDb
-mongoose.connect("mongodb://localhost:27017/skill", { useNewUrlParser: true})
+// Connect to MongoDb - Atlas link
+mongoose.connect("mongodb+srv://skill:Skill2020!@mern-skill.chomw.mongodb.net/skill", { useNewUrlParser: true})
 .then(() => {
     // Once Connected we have to then define our backend server - express create our API
     const app = express();
     app.use(cors());
 
-    app.listen(4000, () => {
+    app.listen(PORT, () => {
         console.log("server has started");
     })
-
+    
     // Get All Students
     app.get("/students", async(req, res) => {
         // GET API which will fetch the students data from Database - MongoDB
@@ -123,6 +126,13 @@ mongoose.connect("mongodb://localhost:27017/skill", { useNewUrlParser: true})
         }
     } )
 
+    if (process.env.NODE_ENV === "production") {
+        app.use(express.static("client/build"));
+
+        app.get('*', (req, res) => {
+          res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        });
+    }
 })
 
 

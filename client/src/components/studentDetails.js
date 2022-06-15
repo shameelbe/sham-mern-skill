@@ -5,11 +5,11 @@ const StudentDetails = () =>
 {
     // UseParams
     const { id } = useParams();
-    const {data: student, isLoading, erroMessage} = useGetRequest('http://localhost:4000/students/'+id);
+    const {data: student, isLoading, erroMessage} = useGetRequest('/students/'+id);
     const navigate = useNavigate();
 
     const deleteStudent = () => {
-        fetch('http://localhost:4000/students/' + student._id, {
+        fetch('/students/' + student._id, {
             method: 'DELETE'
         }).then(() => {
             navigate('/list');
